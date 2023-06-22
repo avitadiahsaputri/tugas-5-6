@@ -1,0 +1,129 @@
+/* #root {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+} */
+header {
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 16px;
+  background-color: rgb(74, 74, 75);
+  color: rgb(168, 109, 0);
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-size: large;
+  font-weight: bold;
+}
+
+form {
+  flex-direction: column;
+  margin: 10px;
+  gap: 2px;
+
+}
+
+label {
+
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+input {
+  height: 40px;
+  border-radius: 4px;
+  border: none;
+  padding-inline: 18px;
+}
+
+.Card1 {
+  height: 10%;
+  width: 30%;
+  background: #756b0c;
+  border-radius: 10px;
+  padding: 10px;
+  flex-direction: column;
+    margin: 10px;
+    gap: 2px;
+
+}
+
+.Card1 label {
+  margin-left: 5px;
+  text-align: left;
+}
+
+.Card1 .Tombol {
+  display: flex;
+  width: 300px;
+}
+
+
+
+/* .Card1 h1 {
+  margin: 0;
+  font-size: 18px;
+} */
+
+
+
+/* .Card1 input {
+  display: flex;
+} */
+
+/* Card nama Galaxy */
+.Card{
+  
+  background: #756b0c;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.Card2 {
+
+  background: #7a7758;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.Card h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+
+
+.Card label {
+  display: flex;
+}
+
+.box{
+  margin-top: 10px;
+  display: flex;
+}
+button{
+    background-color: rgb(73, 68, 55);
+    color: white;
+    height: 36px;
+    padding-inline: 18px;
+    border-radius: 18px;
+    border: none;
+    cursor: pointer;
+    min-width: 96px;
+    font-weight: bold;
+    margin-top: 10px;
+ }
+
+
+ 
+
+
