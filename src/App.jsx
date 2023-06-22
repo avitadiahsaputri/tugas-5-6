@@ -42,37 +42,27 @@ const App = () => {
       diameter: 60000,
     },
   ]);
-// ID
+  // ID
   let nextId = galaxies.length + 1;
-// untuk memperbarui nama bedasarkan id
-useEffect(() => {
-  const selectedGalaxy = galaxies.find((galaxy) => galaxy.id === editGalaxy.id);
-
-  if (selectedGalaxy) {
-    setEditGalaxy((prevEditGalaxy) => ({
-      ...prevEditGalaxy,
-      name: selectedGalaxy.name,
-    }));
-
-    const updatedGalaxies = galaxies.map((galaxy) => {
-      if (galaxy.id === editGalaxy.id) {
-        return { ...galaxy, name: editGalaxy.name };
-      }
-      return galaxy;
-    });
-
-    setGalaxies(updatedGalaxies);
-  } else {
-    const initialName = galaxies.find((galaxy) => galaxy.id === editGalaxy.id)?.name || "";
-
-    setEditGalaxy((prevEditGalaxy) => ({
-      ...prevEditGalaxy,
-      name: initialName,
-    }));
-  }
-}, [editGalaxy, galaxies]);
-
-
+  // untuk memperbarui nama bedasarkan id
+  useEffect(() => {
+    const selectedGalaxy = galaxies.find(
+      (galaxy) => galaxy.id === editGalaxy.id
+    );
+    if (selectedGalaxy) {
+      setEditGalaxy((prevEditGalaxy) => ({
+        ...prevEditGalaxy,
+        name: selectedGalaxy.name,
+      }));
+    } else {
+      const initialName =
+        galaxies.find((galaxy) => galaxy.id === editGalaxy.id)?.name || "";
+      setEditGalaxy((prevEditGalaxy) => ({
+        ...prevEditGalaxy,
+        name: initialName,
+      }));
+    }
+  }, [editGalaxy.id, galaxies]);
 
   return (
     <>
@@ -140,7 +130,6 @@ useEffect(() => {
             </div>
           </form>
         </div>
-
         <div>
           {/* TABEL EDIT & HAPUS ID */}
           <form className="Card">
@@ -167,7 +156,23 @@ useEffect(() => {
                   setEditGalaxy({ ...editGalaxy, name: e.target.value })
                 }
               />
+              <Tombol
+                handleClick={(e) => {
+                  e.preventDefault();
+                  const updatedGalaxies = galaxies.map((galaxy) => {
+                    if (galaxy.id === editGalaxy.id) {
+                      return { ...galaxy, name: editGalaxy.name };
+                    }
+                    return galaxy;
+                  });
+
+                  setGalaxies(updatedGalaxies);
+                }}
+                icon={RxUpdate}
+                teks="Update"
+              ></Tombol>
             </label>
+
             <div className="Tombol">
               <label>
                 Diameter:
@@ -223,39 +228,39 @@ useEffect(() => {
               />
             </label>
           </form>
-          {/* HAPUS */}
-          <form className="Card">
-            <h4>HAPUS</h4>
-            <div>
-              <Tombol
-                handleClick={(e) => {
-                  e.preventDefault();
-                  setGalaxies(galaxies.slice(1));
-                }}
-                icon={AiFillDelete}
-                teks=" Depan"
-              />
-
-              <Tombol
-                handleClick={(e) => {
-                  e.preventDefault();
-                  setGalaxies(galaxies.slice(0, -1));
-                }}
-                icon={AiFillDelete}
-                teks=" Belakang"
-              />
-
-              <Tombol
-                handleClick={(e) => {
-                  e.preventDefault();
-                  setGalaxies((galaxies) => []);
-                }}
-                icon={AiFillDelete}
-                teks="Semua"
-              />
-            </div>
-          </form>
         </div>
+                {/* HAPUS */}
+                <form className="Card3">
+                  <h4>HAPUS</h4>
+                  <div>
+                    <Tombol
+                      handleClick={(e) => {
+                        e.preventDefault();
+                        setGalaxies(galaxies.slice(1));
+                      }}
+                      icon={AiFillDelete}
+                      teks=" Depan"
+                    />
+      
+                    <Tombol
+                      handleClick={(e) => {
+                        e.preventDefault();
+                        setGalaxies(galaxies.slice(0, -1));
+                      }}
+                      icon={AiFillDelete}
+                      teks=" Belakang"
+                    />
+      
+                    <Tombol
+                      handleClick={(e) => {
+                        e.preventDefault();
+                        setGalaxies((galaxies) => []);
+                      }}
+                      icon={AiFillDelete}
+                      teks="Semua"
+                    />
+                  </div>
+                </form>
       </div>
     </>
   );

@@ -37,7 +37,7 @@ label {
 }
 
 input {
-  height: 40px;
+  height: 25px;
   border-radius: 4px;
   border: none;
   padding-inline: 18px;
@@ -82,14 +82,14 @@ input {
 .Card{
   
   background: #756b0c;
+  width: 250px;
   border-radius: 10px;
   padding: 10px;
   margin-bottom: 10px;
 }
 
-.Card2 {
-
-  background: #7a7758;
+.Card button {
+  height: 30px;
   border-radius: 10px;
   padding: 10px;
   margin-bottom: 10px;
@@ -98,6 +98,10 @@ input {
 .Card h3 {
   margin: 0;
   font-size: 18px;
+}
+
+.Card3 button {
+  width: 140px;
 }
 
 
@@ -118,9 +122,9 @@ button{
     border-radius: 18px;
     border: none;
     cursor: pointer;
-    min-width: 96px;
     font-weight: bold;
     margin-top: 10px;
+
  }
 
 
